@@ -1,37 +1,33 @@
+import utils
+
 import openai
 import os
 import json
+import time
 
 openai.api_key  = os.getenv('OPENAI_KEY')
 
-def get_dados_pessoais(nome, sexo, idade, objetivos, peso, altura, dias):
-  info = {
-      "nome": nome,
-      "sexo": sexo,
-      "idade": idade,
-      "objetivos": objetivos,
-      "peso": peso,
-      "altura": altura,
-      "imc": peso/(altura**2),
-      "dias": dias
-  }
-  return info
+def generate_response(messages, model="gpt-3.5-turbo-0613"):
+    response = openai.ChatCompletion.create(
+        model=model,
+        messages=messages,
+        temperature=0,
+    )
+    return response.choices[0].message["content"]
 
 def conversation(dadosPessoais):
-
-  messages=[
+    messages=[
         {"role":"assistant", "content": json.dumps(dadosPessoais)},
         {"role": "user", "content": f"""
-          Crie uma ficha de treino para {dadosPessoais["nome"]} em estrutura de tabela para {dadosPessoais["dias"]} dias
+            Você é um personal trainer e precisa criar uma ficha de treino para {dadosPessoais['nome']}. 
+            A ficha deve ser dividida por letras para {dadosPessoais['dias']} dias, contendo no mínimo 5 exercícios para cada dia de treino.
+            Ela deve estar estruturada em CSV, 
+            com as colunas: 'Treino' (Letra), 'Exercício', 'Séries', 'Repetições' e 'Descanso (segundos)'.
+            
         """}
     ]
-  response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo-0613",
-    messages=messages,
-    temperature=0,
-  )
-  return response.choices[0].message["content"]
-
+    response = generate_response(messages)
+    return response
 
 
 # entrada
@@ -39,7 +35,6 @@ nome = "Fulano"
 sexo = ["feminino", "masculino"]
 idade = 14 
 objetivos = ["perda de peso", "ganho de massa muscular", "melhoria da resistência cardiovascular","melhoria de flexibilidade", "melhoria de postura", "alívio de dores crônicas", "treinamento funcional"]
-semanas = 2
 dias = 3
 condicao_med = ["doença cardíaca", "diabete", "asma ou doença respiratória", "obesidade", "gravidez"]
 nivel_atual = ["sendentaria", "moderada", "ativo"]
@@ -47,8 +42,14 @@ peso = 45
 altura = 1.65
 
 
+dadosPessoais = utils.get_dados_pessoais(nome, sexo[0], idade, objetivos[0], peso, altura, dias)
+inicio = time.time()
+response = conversation(dadosPessoais)
+fim = time.time()
 
 
-dadosPessoais = get_dados_pessoais("Fulano", sexo[0],idade,objetivos[0],peso,altura,dias)
-r = conversation(dadosPessoais)
-print(r)
+print(response)
+print("\ntempo: ", fim - inicio)
+
+utils.generate_csv(response)
+print("\nArquivo CSV criado")
