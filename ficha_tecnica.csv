@@ -1,16 +1,35 @@
-Treino,Exercício,Séries,Repetições,Descanso (segundos)
-A,Agachamento,3,12,60
-A,Supino reto,3,10,60
-A,Remada,3,10,60
-A,Desenvolvimento,3,12,60
-A,Abdominal,3,15,60
-B,Leg press,3,12,60
-B,Supino inclinado,3,10,60
-B,Puxada alta,3,10,60
-B,Elevação lateral,3,12,60
-B,Prancha,3,30 segundos,60
-C,Agachamento livre,3,12,60
-C,Supino declinado,3,10,60
-C,Remada baixa,3,10,60
-C,Elevação frontal,3,12,60
-C,Crunch,3,15,60
+Treino A:
+Exercício, Séries, Repetições, Descanso (segundos)
+Agachamento, 3, 12, 60
+Supino reto, 3, 10, 60
+Remada alta, 3, 12, 60
+Desenvolvimento militar, 3, 10, 60
+Abdominal, 3, 15, 60
+Flexão de braço, 3, 10, 60
+""
+Treino B:
+Exercício, Séries, Repetições, Descanso (segundos)
+Leg press, 3, 12, 60
+Crossover, 3, 10, 60
+Puxada alta, 3, 12, 60
+Elevação lateral, 3, 10, 60
+Prancha, 3, 30 segundos, 60
+Rosca direta, 3, 10, 60
+""
+Treino C:
+Exercício, Séries, Repetições, Descanso (segundos)
+Agachamento sumô, 3, 12, 60
+Supino inclinado, 3, 10, 60
+Remada baixa, 3, 12, 60
+Desenvolvimento com halteres, 3, 10, 60
+Abdominal oblíquo, 3, 15, 60
+Tríceps testa, 3, 10, 60
+""
+Treino D:
+Exercício, Séries, Repetições, Descanso (segundos)
+Cadeira extensora, 3, 12, 60
+Flexão de pernas, 3, 10, 60
+Puxada frontal, 3, 12, 60
+Elevação frontal, 3, 10, 60
+Prancha lateral, 3, 30 segundos, 60
+Rosca martelo, 3, 10, 60
