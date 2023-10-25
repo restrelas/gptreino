@@ -1,9 +1,6 @@
-import utils
-
 import openai
 import os
 import json
-import time
 
 openai.api_key  = os.getenv('OPENAI_KEY')
 
@@ -22,33 +19,18 @@ def conversation(dadosPessoais):
             Você é um personal trainer e precisa criar uma ficha de treino para {dadosPessoais['nome']}
             A ficha deve ser dividida por letras para {dadosPessoais['dias']} dias.
             Numero de exercícios mínimos por treino = 6, máximo = 8.
-            A ficha deve estar estruturada em CSV, 
+            A ficha deve estar estritamente estruturada em CSV, 
             com as colunas: 'Treino' (Letra), 'Exercício', 'Séries', 'Repetições' e 'Descanso (segundos)'.
         """}
     ]
     response = generate_response(messages)
-    return response
 
-# entrada
-nome = "Fulano"
-sexo = ["feminino", "masculino"]
-idade = 14 
-objetivos = ["perda de peso", "ganho de massa muscular", "melhoria da resistência cardiovascular","melhoria de flexibilidade", "melhoria de postura", "alívio de dores crônicas", "treinamento funcional"]
-dias = 4
-condicao_med = ["doença cardíaca", "diabete", "asma ou doença respiratória", "obesidade", "gravidez"]
-nivel_atual = ["sendentaria", "moderada", "ativo"]
-peso = 45
-altura = 1.65
+    second_message = [
+        {"role": "user", "content": f"""
+         Ajuste esta ficha de treino para seguir o formato CSV com exatamente essas colunas:'Treino' (Letra), 'Exercício', 'Séries', 'Repetições' e 'Descanso (segundos)': """},
+        {"role": "assistant", "content": response},
+    ]
 
 
-dadosPessoais = utils.get_dados_pessoais(nome, sexo[0], idade, objetivos[0], peso, altura, dias)
-inicio = time.time()
-response = conversation(dadosPessoais)
-fim = time.time()
-
-
-print(response)
-print("\ntempo: ", fim - inicio)
-
-utils.generate_csv(response)
-print("\nArquivo CSV criado")
+    second_responde = generate_response(second_message)
+    return second_responde

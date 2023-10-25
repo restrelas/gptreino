@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/home.js"></script>
+    <title>Ficha de Treino</title>
+</head>
+<body>
+    <h1>Ficha de Treino</h1>
+
+    <form id="formulario" method="post" action="/receber-dados">
+        <div>
+            <h2> Seus dados: </h2>
+            Nome: <input type="text" id="nome" name="nome" required><br><br>
+
+            <label>Sexo:</label>
+            <input type="radio" id="feminino" name="sexo" value="feminino" required>
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="masculino" name="sexo" value="masculino" required>
+            <label for="masculino">Masculino</label><br><br>
+
+            Idade: <input type="number" id="idade" name="idade" required min="0"><br><br>
+            
+            <label for="peso">Peso (em kg):</label>
+            <input type="number" id="peso" name="peso" required><br><br>
+
+            <label for="altura">Altura (em cm):</label>
+            <input type="number" id="altura" name="altura" required><br><br>
+            
+            <h2> </h2>
+            <label>Objetivo:</label>
+            <select name="objetivo" required>
+                <option value="treinamento_funcional">Treinamento Funcional</option>
+                <option value="perda_de_peso">Perda de Peso</option>
+                <option value="ganho_de_massa_muscular">Ganho de Massa Muscular</option>
+                <option value="resistencia_cardiovascular">Melhoria da Resistência Cardiovascular</option>
+                <option value="melhoria_da_flexibilidade">Melhoria de Flexibilidade</option>
+                <option value="melhoria_de_postura">Melhoria de Postura</option>
+                <option value="alivio_de_dores_cronicas">Alívio de Dores Crônicas</option>
+            </select><br><br>
+
+            <label for="dias">Dias por semana:</label>
+            <input type="number" id="dias" name="dias" required min="0"><br><br>
+
+            <h2> </h2>
+            <label>Condição Médica:</label>
+            <input type="checkbox" id="doenca_cardiaca" name="condicao_med[]" value="doença cardiaca">
+            <label for="doenca_cardiaca">Doença Cardíaca</label>
+            <input type="checkbox" id="diabete" name="condicao_med[]" value="diabete">
+            <label for="diabete">Diabete</label>
+            <input type="checkbox" id="asma" name="condicao_med[]" value="asma ou doença respiratoria">
+            <label for="asma">Asma ou Doença Respiratória</label>
+            <input type="checkbox" id="obesidade" name="condicao_med[]" value="obesidade">
+            <label for="obesidade">Obesidade</label>
+            <input type="checkbox" id="gravidez" name="condicao_med[]" value="gravidez">
+            <label for="gravidez">Gravidez</label><br><br>
+            <input type="checkbox" id="nenhum" name="condicao_med[]" value="nehuma condiçao medica">
+            <label for="nenhum">Nenhum</label><br><br>
+
+            <label for="nivel_atual">Nível Atual de Atividade:</label>
+            <select name="nivel_atual" required>
+                <option value="sedentario">Sedentário</option>
+                <option value="moderado de atividade">Moderado</option>
+                <option value="ativo">Ativo</option>
+            </select><br><br>
+
+            <button type="button" id="enviar">Criar ficha</button> 
+        </div>
+    </form>
+
+    <div id="processando" style="display: none;">Estou criado uma ficha de treino, aguarde um pouco ...</div>
+</body>
+</html>

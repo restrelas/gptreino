@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/tabela.css" />
+    <title>Teste</title>
+  </head>
+  <body>
+    <h1>Ficha de treino</h1>
+    
+    <div class="container">
+        <a href="{{ url_for('gerar_pdf') }}" target="_blank">Baixar PDF</a>
+    </div>
+ 
+
+    <table>
+      <tr>
+        <th>Treino</th>
+        <th>Exercício</th>
+        <th>Séries</th>
+        <th>Repetições</th>
+        <th>Descanso (seg)</th>
+      </tr>
+      {% for entry in data %}
+      <tr>
+        <td>{{ entry.Treino }}</td>
+        <td>{{ entry.Exercicio }}</td>
+        <td>{{ entry.Series }}</td>
+        <td>{{ entry.Repeticoes }}</td>
+        <td>{{ entry.Descanso }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
