@@ -12,16 +12,16 @@ import main
 # entrada
 nome = "Fulano"
 sexo = ["feminino", "masculino"]
-idade = 14 
-objetivo = ["perda de peso", "ganho de massa muscular", "melhoria da resistência cardiovascular","melhoria de flexibilidade", "melhoria de postura", "alívio de dores crônicas", "treinamento funcional"]
-dias = 4
-condicao_med = ["doença cardíaca", "diabete", "asma ou doença respiratória", "obesidade", "gravidez", "nenhum"]
+idade = 20
+tipo_treino = ["Treino cardiovascular", "Treino de definição", "Treino de força", "Treino funcional", "Treino de hipertrofia", "Treino leve"]
+divisao_treino = ['ABC', 'ABCD', 'ABCDE']
+condicao_med = ["doença cardíaca", "asma ou doença respiratória", "gravidez", "nenhum"]
 nivel_atual = ["sendentaria", "moderada", "ativo"]
-peso = 45
+peso = 50
 altura = 1.65
 
 
-dadosPessoais = utils.get_dados_pessoais(nome, sexo[0], idade, peso, altura, objetivo[0], dias, condicao_med[5], nivel_atual[0])
+dadosPessoais = utils.get_dados_pessoais(nome, sexo[0], idade, peso, altura, tipo_treino[0], divisao_treino[1], condicao_med[3], nivel_atual[0])
 print(dadosPessoais)
 inicio = time.time()
 response = main.conversation(dadosPessoais)

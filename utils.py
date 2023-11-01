@@ -1,7 +1,7 @@
 import csv
 import time
 
-def get_dados_pessoais(nome, sexo, idade, peso, altura, objetivo, dias, condicao_med, nivel_atual):
+def get_dados_pessoais(nome, sexo, idade, peso, altura, tipo_treino, divisao_treino, condicao_med, nivel_atual):
     
     info = {
         "nome": nome,
@@ -10,8 +10,8 @@ def get_dados_pessoais(nome, sexo, idade, peso, altura, objetivo, dias, condicao
         "peso": peso,
         "altura (em cm)": altura,
         # "imc": peso/((altura/100)**2),
-        "objetivo": objetivo,
-        "dias": dias,
+        "tipo_treino": tipo_treino,
+        "divisao_treino": divisao_treino,
         "condicao medica": condicao_med,
         "nivel atual de atividades": nivel_atual
 

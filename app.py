@@ -28,18 +28,17 @@ def receber_dados():
     idade = request.form.get('idade')
     peso = int(request.form.get('peso'))
     altura = int(request.form.get('altura'))
-    objetivo = request.form.get('objetivo')
-    dias = request.form.get('dias')
+    tipo_treino = request.form.get('tipo_treino')
+    divisao_treino = request.form.get('divisao_treino')
     condicao_med = request.form.get('condicao_med[]')
     nivel_atual = request.form.get('nivel_atual')
 
-    dadosPessoais = utils.get_dados_pessoais(nome, sexo, idade,  peso, altura, objetivo, dias, condicao_med, nivel_atual)
+    if condicao_med == None:
+        condicao_med = "nenhum"
 
-    # print(dadosPessoais)
+    dadosPessoais = utils.get_dados_pessoais(nome, sexo, idade,  peso, altura, tipo_treino, divisao_treino, condicao_med, nivel_atual)
 
     csv_data = main.conversation(dadosPessoais)
-
-    # print(csv_data)
 
     session['csv_data'] = csv_data
 

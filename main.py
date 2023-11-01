@@ -17,8 +17,8 @@ def conversation(dadosPessoais):
         {"role":"assistant", "content": json.dumps(dadosPessoais)},
         {"role": "user", "content": f"""
             Você é um personal trainer e precisa criar uma ficha de treino para {dadosPessoais['nome']}
-            A ficha deve ser dividida por letras para {dadosPessoais['dias']} dias.
-            Numero de exercícios mínimos por treino = 6, máximo = 8.
+            A ficha deve ser dividida em {dadosPessoais['divisao_treino']}.
+            A quantidade de exercícios deve ser variando para cada letra de 7 a 10 exercicios.
             A ficha deve estar estritamente estruturada em CSV, 
             com as colunas: 'Treino' (Letra), 'Exercício', 'Séries', 'Repetições' e 'Descanso (segundos)'.
         """}
