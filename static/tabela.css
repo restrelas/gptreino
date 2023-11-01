@@ -1,0 +1,49 @@
+h1{
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+a {
+    text-decoration: none; 
+    color: #0077b5;
+    font-weight: bold; 
+    font-size: 16px; 
+}
+
+
+a:hover {
+    text-decoration: underline; 
+    color: #005588; 
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+th, td{
+    padding: 10px;
+    text-align: center;
+    width: 120px;
+}
+
+th{
+    color: #fff;
+    background-color: #121111;
+    font-weight: bold;
+}
+
+
+tr:hover:nth-child(1n + 2) {
+    background-color: #858585;
+    color: #fff;
+}
+    

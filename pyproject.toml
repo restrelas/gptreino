@@ -8,6 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 openai = "^0.28.1"
+flask = "^3.0.0"
+reportlab = "^4.0.6"
 
 
 [build-system]

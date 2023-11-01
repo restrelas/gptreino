@@ -2,15 +2,22 @@ Treino,Exercício,Séries,Repetições,Descanso (segundos)
 A,Agachamento,3,12,60
 A,Supino reto,3,10,60
 A,Remada,3,10,60
-A,Desenvolvimento,3,12,60
 A,Abdominal,3,15,60
+A,Prancha,3,30 segundos,60
+A,Corrida,1,20 minutos,0
 B,Leg press,3,12,60
-B,Supino inclinado,3,10,60
+B,Desenvolvimento,3,10,60
 B,Puxada alta,3,10,60
-B,Elevação lateral,3,12,60
-B,Prancha,3,30 segundos,60
+B,Prancha lateral,3,30 segundos,60
+B,Corrida,1,20 minutos,0
 C,Agachamento livre,3,12,60
-C,Supino declinado,3,10,60
+C,Supino inclinado,3,10,60
 C,Remada baixa,3,10,60
-C,Elevação frontal,3,12,60
-C,Crunch,3,15,60
+C,Abdominal oblíquo,3,15,60
+C,Prancha,3,30 segundos,60
+C,Corrida,1,20 minutos,0
+D,Leg press 45,3,12,60
+D,Desenvolvimento militar,3,10,60
+D,Puxada frontal,3,10,60
+D,Prancha lateral,3,30 segundos,60
+D,Corrida,1,20 minutos,0

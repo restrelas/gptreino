@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/home.js" type="module"></script>
+    <script src="/static/custom-nav.js " type="module"></script>
+    <link rel="stylesheet" href="static/home.css" />
+    <link href="https://fonts.cdnfonts.com/css/stock-quote" rel="stylesheet">
+    <title>Ficha de Treino</title>
+</head>
+<body>
+  	<custom-nav></custom-nav>
+  
+    <h1>Preencha com suas informações:</h1>
+
+    <form id="formulario" method="post" action="/receber-dados">
+      <div  class="dados-container"> 
+      		<h2> Seus dados: </h2>
+            Nome: <input type="text" id="nome" name="nome" required autofocus><br><br>
+            Sexo: 
+            <input type="radio" id="feminino" name="sexo" value="feminino" required>
+            <label for="feminino">Feminino</label>
+            <input type="radio" id="masculino" name="sexo" value="masculino" required>
+            <label for="masculino">Masculino</label><br><br>
+
+            Idade: 
+            <input type="number" id="idade" name="idade" required min="0"><br><br>
+            
+            Peso (em kg):
+            <input type="number" id="peso" name="peso" required min="30"><br><br>
+
+           	Altura (em cm):
+            <input type="number" id="altura" name="altura" required min="100"><br><br>
+      </div>
+      <div  class="treino-container"> 
+            <h2> Sobre o treino: </h2>
+        	<label>Tipo de treino:</label>
+            <select name="tipo_treino" required>
+                <option value="treinamento_funcional">Treinamento Funcional</option>
+                <option value="treino leve">Treino leve</option>
+                <option value="treino cardiovascular">Treino cardiovascular</option>
+                <option value="treino de definição">Treino de definição</option>
+                <option value="treino de força">Treino de força</option>
+                <option value="treino de hipertrofia">Treino de hipertrofia</option>
+            </select><br><br>
+
+            <label>Divisão de treino:</label>
+            <select name="divisao_treino" required>
+                <option value="ABC">ABC</option>
+                <option value="ABCD">ABCD</option>
+                <option value="ABCDE">ABCDE</option>
+            </select><br><br>
+      </div>
+        
+      <div  class="saude-container">
+        <h2> Sua saúde: </h2>
+        <h2> </h2>
+            <label>Condição Médica:</label>
+            <input type="checkbox" id="nenhum" name="condicao_med[]" value="nehuma condiçao medica">
+            <label for="nenhum">Nenhum</label><br><br>
+            <input type="checkbox" id="doenca_cardiaca" name="condicao_med[]" value="doença cardiaca">
+            <label for="doenca_cardiaca">Doença Cardíaca</label><br><br>
+            <input type="checkbox" id="asma" name="condicao_med[]" value="asma ou doença respiratoria">
+            <label for="asma">Asma ou Doença Respiratória</label><br><br>
+            <input type="checkbox" id="gravidez" name="condicao_med[]" value="gravidez">
+            <label for="gravidez">Gravidez</label><br><br>
+
+            <label for="nivel_atual">Nível Atual de Atividade:</label>
+            <select name="nivel_atual" required>
+                <option value="sedentario">Sedentário</option>
+                <option value="moderado de atividade">Moderado</option>
+                <option value="ativo">Ativo</option>
+            </select><br><br>
+      </div>
+       
+        <button type="button" id="enviar">Criar ficha</button> 
+
+    </form>
+
+    <div id="mensagem" style="display: none;"></div>
+</body>
+</html>
